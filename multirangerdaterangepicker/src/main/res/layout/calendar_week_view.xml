@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parent_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingBottom="8dp"
+    android:visibility="gone"
+    android:weightSum="7">
+
+    <TextView
+        style="@style/CalendarPickerCell.Week"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/calendar_sunday" />
+
+    <TextView
+        style="@style/CalendarPickerCell.Week"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/calendar_monday" />
+
+    <TextView
+        style="@style/CalendarPickerCell.Week"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/calendar_tuesday" />
+
+    <TextView
+        style="@style/CalendarPickerCell.Week"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/calendar_wednesday" />
+
+    <TextView
+        style="@style/CalendarPickerCell.Week"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/calendar_thursday" />
+
+    <TextView
+        style="@style/CalendarPickerCell.Week"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/calendar_friday" />
+
+    <TextView
+        style="@style/CalendarPickerCell.Week"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/calendar_saturday" />
+
+</LinearLayout>

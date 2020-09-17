@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/calendar_day_gap">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:weightSum="2">
+
+        <View
+            android:id="@+id/vHalfLeftBg"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/calendar_day_height"
+            android:layout_weight="1" />
+
+        <View
+            android:id="@+id/vHalfRightBg"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/calendar_day_height"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/vDayName"
+            style="@style/CalendarPickerCell.Day"
+            android:textColor="@color/calendar_date_default"
+            android:layout_width="@dimen/calendar_day_height"
+            android:layout_height="@dimen/calendar_day_height"
+            tools:text="31" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/vImageView"
+            style="@style/CalendarPickerCell.ImageView"
+            android:layout_width="@dimen/calendar_day_height"
+            android:layout_height="@dimen/calendar_day_height"
+            android:padding="4dp"
+            android:src="@drawable/edit_circle" />
+
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/vImage"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_toEndOf="@id/ll"
+        android:layout_toRightOf="@id/ll"
+        android:visibility="gone"
+        android:src="@drawable/period_cancel" />
+
+</RelativeLayout>
