@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
             setMode(CalendarPicker.SelectionMode.MULTI_RANGE)
 
             setRangeDate(firstCalendarDate.time, secondCalendarDate.time)
-            scrollToDate(Calendar.getInstance().time)
+
 
             val firstCalendarDate = Calendar.getInstance()
             firstCalendarDate.set(2019, 9, 1)
@@ -66,8 +66,16 @@ class MainActivity : AppCompatActivity() {
             range = Range(firstCalendarDate.time, secondDate.time)
             arrayRange.add(range)
             setMultiSelectionDate(arrayRange)
-//            setSelectionDate(firstCalendarDate.time, thirdCalendarDate.time)
+
+
         }
+
+
+        calendar_view.postDelayed({
+            calendar_view.apply {
+                scrollToDate(Calendar.getInstance().time)
+            }
+        },0)
 
     }
 }

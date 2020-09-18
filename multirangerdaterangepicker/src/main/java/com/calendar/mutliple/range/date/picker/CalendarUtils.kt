@@ -14,8 +14,13 @@ internal fun Calendar.toPrettyMonthString(
 }
 
 internal fun Calendar.toPrettyDateString(locale: Locale = Locale.getDefault()): String {
-    val day = get(DAY_OF_MONTH).toString()
-    return "$day ${this.toPrettyMonthString(Calendar.SHORT, locale)}"
+    val day = get(DAY_OF_MONTH)
+    var days = day.toString()
+    if(day < 10){
+        days = "0$days"
+    }
+
+    return "$days ${this.toPrettyMonthString(Calendar.SHORT, locale)}"
 }
 
 internal fun Calendar.isBefore(otherCalendar: Calendar): Boolean {

@@ -87,7 +87,7 @@ class CalendarPicker : RecyclerView {
         val index =
             mCalendarData.indexOfFirst { it is CalendarEntity.Day && it.date.isTheSameDay(date) }
         require(index > -1) { "Date to scroll must be included in your Calendar Range Date" }
-        // smoothScrollToPosition(index)
+       //  smoothScrollToPosition(index)
         scrollToPosition(index)
     }
 
@@ -177,7 +177,13 @@ class CalendarPicker : RecyclerView {
         (0..monthDifference).forEach { _ ->
             val totalDayInAMonth = cal.getActualMaximum(DAY_OF_MONTH)
             (1..totalDayInAMonth).forEach { _ ->
+
                 val day = cal.get(DAY_OF_MONTH)
+                var days = day.toString()
+                if(day < 10){
+                    days = "0$days"
+                }
+
                 val dayOfWeek = cal.get(DAY_OF_WEEK)
                 val dateState = if (cal.isBefore(startCalendar) || cal.isAfter(endCalendar)) {
                     DateState.DISABLED
@@ -191,7 +197,7 @@ class CalendarPicker : RecyclerView {
                         calendarData.addAll(createStartEmptyView(dayOfWeek))
                         calendarData.add(
                             CalendarEntity.Day(
-                                day.toString(),
+                                days,
                                 cal.toPrettyDateString(),
                                 cal.time,
                                 state = dateState
@@ -201,7 +207,7 @@ class CalendarPicker : RecyclerView {
                     totalDayInAMonth -> {
                         calendarData.add(
                             CalendarEntity.Day(
-                                day.toString(),
+                                days,
                                 cal.toPrettyDateString(),
                                 cal.time,
                                 state = dateState
@@ -212,7 +218,7 @@ class CalendarPicker : RecyclerView {
                     else -> {
                         calendarData.add(
                             CalendarEntity.Day(
-                                day.toString(),
+                                days,
                                 cal.toPrettyDateString(),
                                 cal.time,
                                 state = dateState
